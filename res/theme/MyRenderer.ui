@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<component type="Container" name="MyRenderer" cloudDestinationProperty="MyRenderer" >
-  <component type="Label" name="Label" cloudDestinationProperty="Label" text="Sample container that brings from list" >
-  </component>
-  <component type="ShareButton" name="ShareButton" cloudDestinationProperty="ShareButton" text="ShareButton" >
+<component type="Container" name="MyRenderer" cloudDestinationProperty="MyRenderer" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="MultiButton" name="MultiButton" cloudDestinationProperty="MultiButton" >
+    <custom name="line1" type="java.lang.String" value="Sample " />
+    <custom name="uiid1" type="java.lang.String" value="MultiLine1" />
   </component>
 </component>

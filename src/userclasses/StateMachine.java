@@ -7,8 +7,15 @@ package userclasses;
 import generated.StateMachineBase;
 import com.codename1.ui.*; 
 import com.codename1.ui.events.*;
-import com.codename1.ui.list.MultiList;
 import com.codename1.ui.util.Resources;
+import com.codename1.ui.Image;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+
+
 
 /**
  *
@@ -56,7 +63,42 @@ public class StateMachine extends StateMachineBase {
 
    // @Override
     protected boolean initListModelList(List cmp) {
-        cmp.setModel(new com.codename1.ui.list.DefaultListModel(new String[] {"Item 1", "Item 2", "Item 3"}));
+    ArrayList<Map<String, Object>> a = new ArrayList<Map<String, Object>>();
+             HashMap<String, Object> m = new HashMap<String, Object>();
+             m.put("Line1", "Dilan Wijerathne");
+             m.put("Line2", "Image of mine");
+             m.put("Line3", "Dilan Amal");
+             m.put("Line4", "Image of mine");
+             a.add(m);
+         //    ... etc for every row
+             cmp.setModel(new com.codename1.ui.list.DefaultListModel(a));
+        return true;
+    }
+
+    @Override
+    protected boolean initListModelMultiList(List cmp) {
+        Image img=null;
+        try {
+            img = Image.createImage("/images.cart.jpg");
+        } catch (IOException ex) {
+            
+        }
+        
+            ArrayList<Map<String, Object>> a = new ArrayList<Map<String, Object>>();
+            HashMap<String, Object> m = new HashMap<String, Object>();
+                m.put("Line1", "Dilan Wijerathne");
+                m.put("Line2", fetchResourceFile().getImage("cart.jpg"));
+                m.put("Line3", "Dilan Amal");
+             
+             HashMap<String, Object> c = new HashMap<String, Object>();
+                c.put("Line1", "Dilan Wijerathne");
+                c.put("Line2", "Dilan Wijerathne");
+                c.put("Line3", "Dilan Wijerathne");
+             a.add(m);
+             a.add(c);
+         //    ... etc for every row
+             cmp.setModel(new com.codename1.ui.list.DefaultListModel(a));
+     //   cmp.setModel(new com.codename1.ui.list.DefaultListModel(CONTACTS_INFO));
         return true;
     }
 }

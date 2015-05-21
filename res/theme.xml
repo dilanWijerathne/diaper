@@ -2,6 +2,8 @@
 
 <resource majorVersion="1" minorVersion="6" useXmlUI="false">
     <ui name="Cart" />
+    <image name="cart.jpg"  />
+    <image name="cart.jpg 1" type="multi"  />
     <ui name="GUI 1" />
     <ui name="MyRenderer" />
     <theme name="Theme">
